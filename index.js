@@ -1,0 +1,10 @@
+const client = require('./Handlers/clientHandler')
+const Luicik = require('./Handlers/loaderHandler')
+require('./Handlers/functionHandler')
+const keep_alive = require('./keep_alive.js')
+process.on('uncaughtException', console.log)
+process.on('unhandledRejection', console.log)
+
+Luicik.connect()
+Luicik.fetchCommands()
+Luicik.fetchEvents()
